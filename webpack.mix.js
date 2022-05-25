@@ -6,4 +6,8 @@ mix
     require("postcss-import"),
     require("tailwindcss"),
     require("autoprefixer"),
-  ]);
+  ])
+  .sourceMaps()
+  .autoload({
+    jquery: ["$", "window.jQuery"],
+  });

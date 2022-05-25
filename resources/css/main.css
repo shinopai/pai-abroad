@@ -1,0 +1,130 @@
+main p.bg-my-orange::after {
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  pointer-events: none;
+  position: absolute;
+  border-color: rgba(249, 156, 71, 0);
+  border-top-width: 23px;
+  border-bottom-width: 23px;
+  border-left-width: 23px;
+  border-right-width: 23px;
+  margin-left: -23px;
+  border-top-color: #f99c47;
+  top: 100%;
+  left: 50%;
+}
+main ul.my-14 {
+  list-style-image: url("../../public/images/lp/plane-icon.png");
+  list-style-position: inside;
+}
+main p.bg-my-blue span::after {
+  content: ">>";
+  margin-left: 5px;
+  display: inline-block;
+}
+table,
+table th,
+table td {
+  border: 1px solid #faeaea;
+  padding: 10px 5px;
+}
+#question h3::before {
+  content: "";
+  background: url("../../public/images/lp/question-icon1.png") no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  vertical-align: bottom;
+}
+@media (min-width: 520px) {
+  .question_arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 7.5px 0 7.5px;
+    border-color: #000222 transparent transparent transparent;
+  }
+}
+@media (min-width: 320px) {
+  .question_arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 5.5px 0 5.5px;
+    border-color: #000222 transparent transparent transparent;
+  }
+}
+#about {
+  background-image: url("../../public/images/lp/about-bg.jpg");
+}
+@media (min-width: 320px) {
+  #about {
+    height: 950px;
+  }
+}
+@media (min-width: 520px) {
+  #about {
+    height: 850px;
+  }
+}
+@media (min-width: 960px) {
+  #about {
+    height: 500px;
+  }
+}
+#program {
+  background-image: url("../../public/images/lp/program-bg.jpg");
+}
+@media (min-width: 320px) {
+  #program {
+    height: 1500px;
+  }
+}
+@media (min-width: 520px) {
+  #program {
+    height: 1400px;
+  }
+}
+@media (min-width: 960px) {
+  #program {
+    height: 700px;
+  }
+}
+#voice {
+  background-image: url("../../public/images/lp/voice-bg.jpg");
+}
+@media (min-width: 320px) {
+  #voice {
+    height: 1500px;
+  }
+}
+@media (min-width: 520px) {
+  #voice {
+    height: 1350px;
+  }
+}
+@media (min-width: 960px) {
+  #voice {
+    height: 700px;
+  }
+}
+#overview {
+  background-image: url("../../public/images/lp/overview-bg.jpg");
+}
+@media (min-width: 320px) {
+  #overview {
+    height: 700px;
+  }
+}
+@media (min-width: 520px) {
+  #overview {
+    height: 650px;
+  }
+}
+@media (min-width: 960px) {
+  #overview {
+    height: 550px;
+  }
+}

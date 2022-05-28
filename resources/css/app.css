@@ -4,3 +4,6 @@
 
 /* css entry file */
 @import "./main.css";
+
+/* swiper(slide image) entry cd file */
+@import "./swiper/swiper.css";

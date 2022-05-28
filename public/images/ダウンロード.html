@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="KsB5AdrHutwnyNKHqRqfovHaVrotPZtrkz3ZoOng">
+
+    
+    <title>HOME ABROAD</title>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="http://glacial-fortress-30715.herokuapp.com/js/app.js" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="http://glacial-fortress-30715.herokuapp.com/css/app.css" rel="stylesheet">
+    <link href="http://glacial-fortress-30715.herokuapp.com/css/custom.css" rel="stylesheet">
+</head>
+<body>
+    
+    <script>
+        $(function(){
+            $('.nav-host').click(function() {
+                $('.overray, .touroku').fadeIn();
+            })
+            //モーダルの外側か閉じるをクリックでモーダルを閉じる
+            $('.overray, .close').click(function() {
+                $('.overray, .touroku').fadeOut();
+            })
+        })
+    </script>
+    <script>
+        $(function(){
+            $('.nav-login').click(function() {
+                $('.overray, .roguin').fadeIn();
+            })
+            //モーダルの外側か閉じるをクリックでモーダルを閉じる
+            $('.overray, .close').click(function() {
+                $('.overray, .roguin').fadeOut();
+            })
+           
+        })
+    </script>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+            <div class="container">
+                <a class="navbar-brand" href="http://glacial-fortress-30715.herokuapp.com">
+                <img src="http://glacial-fortress-30715.herokuapp.com/img/252efd0d-9165-4794-aedb-262ab092e3ce.png" width="140px" height="140px" alt="">
+                </a>
+           
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            </a>
+                            <a href="https://hikopro.com/homeabroad/" class="nav-link">HOME ABROADとは</a>
+                        </li>
+                        <!-- Authentication Links -->
+                                                                        <li class="nav-item">
+                            <a class="nav-link nav-host" >ホストになる</a>
+                        </li>
+                        <li class="nav-item">
+                             <a class="nav-link nav-host" >新規登録</a>
+                        </li>
+                                                     <li class="nav-item">
+                                <a class="nav-link nav-login">ログイン</a>
+                            </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+                
+<div class="main">
+        <div class="overray"></div>
+        
+       
+    <div class="container touroku">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="card">
+                                    
+                                    <div class="card-header">Register<span class="close">×</span></div>
+                    
+                                    <div class="card-body">
+                                        <form method="POST" action="http://glacial-fortress-30715.herokuapp.com/register">
+                                            <input type="hidden" name="_token" value="KsB5AdrHutwnyNKHqRqfovHaVrotPZtrkz3ZoOng">                    
+                                            <div class="form-group row">
+                                                <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                    
+                                                <div class="col-md-6">
+                                                    <input id="name" type="text" class="form-control " name="name" value="" required autocomplete="name" autofocus>
+                    
+                                                                                                    </div>
+                                            </div>
+                    
+                                            <div class="form-group row">
+                                                <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                    
+                                                <div class="col-md-6">
+                                                    <input id="email" type="email" class="form-control " name="email" value="" required autocomplete="email">
+                    
+                                                                                                    </div>
+                                            </div>
+                    
+                                            <div class="form-group row">
+                                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                    
+                                                <div class="col-md-6">
+                                                    <input id="password" type="password" class="form-control " name="password" required autocomplete="new-password">
+                    
+                                                                                                    </div>
+                                            </div>
+                    
+                                            <div class="form-group row">
+                                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+                    
+                                                <div class="col-md-6">
+                                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                                </div>
+                                            </div>
+                    
+                                            <div class="form-group row mb-0">
+                                                <div class="col-md-6 offset-md-4">
+                                                    <button type="submit" class="btn btn-primary">
+                                                        Register
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="facebook text-center mt-2">
+                                            <a href="" class="btn btn-primary facebook"><i class="fab fa-facebook-f pr-1"></i>Facebook sign in</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
+     
+    <div class="container roguin">
+                            <div class="row justify-content-center">
+                                <div class="col-md-8">
+                                    <div class="card">
+                                        <div class="card-header">Login<span class="close">×</span></div>
+                        
+                                        <div class="card-body">
+                                            <form method="POST" action="http://glacial-fortress-30715.herokuapp.com/login">
+                                                <input type="hidden" name="_token" value="KsB5AdrHutwnyNKHqRqfovHaVrotPZtrkz3ZoOng">                        
+                                                <div class="form-group row">
+                                                    <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                        
+                                                    <div class="col-md-6">
+                                                        <input id="email" type="email" class="form-control " name="email" value="" required autocomplete="email" autofocus>
+                        
+                                                                                                            </div>
+                                                </div>
+                        
+                                                <div class="form-group row">
+                                                    <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                        
+                                                    <div class="col-md-6">
+                                                        <input id="password" type="password" class="form-control " name="password" required autocomplete="current-password">
+                        
+                                                                                                            </div>
+                                                </div>
+                        
+                                                <div class="form-group row">
+                                                    <div class="col-md-6 offset-md-4">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" >
+                        
+                                                            <label class="form-check-label" for="remember">
+                                                                Remember Me
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                        
+                                                <div class="form-group row mb-0">
+                                                    <div class="col-md-8 offset-md-4">
+                                                        <button type="submit" class="btn btn-primary">
+                                                            Login
+                                                        </button>
+                        
+                                                                                                                    <a class="btn btn-link" href="http://glacial-fortress-30715.herokuapp.com/password/reset">
+                                                                Forgot Your Password?
+                                                            </a>
+                                                                                                            </div>
+                                                </div>
+                                            </form>
+                                            <div class="facebook text-right text-center mt-2">
+                                            <a href="http://glacial-fortress-30715.herokuapp.com/redirect" class="btn btn-primary facebook"><i class="fab fa-facebook-f pr-1"></i>Facebook LogIn</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+
+
+ <div id="slides" class="carousel slide top" data-ride="carousel">
+	<ul class="carousel-indicators">
+		<li data-target="#slides" data-slide-to="0" class="active"></li>
+        <li data-target="#slides" data-slide-to="1" ></li>
+        <li data-target="#slides" data-slide-to="2" ></li>
+        <li data-target="#slides" data-slide-to="3" ></li>
+        <li data-target="#slides" data-slide-to="4" ></li>
+	</ul>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+        <img src="http://glacial-fortress-30715.herokuapp.com/img/adult-apartment-carpet-1054974.jpg"  alt="">
+            
+			<div class="carousel-caption">
+                <h1>グローバル時代の新しい留学</h1>
+                <h2>HOME ABROAD</h2>
+        <a href="#project">
+				<button type="button" class="btn btn-outline-light btn-lg">さっそく留学先を探す</button>
+        </a>
+    <a href="https://hikopro.com/homeabroad/">
+				<button type="button" class="btn btn-outline-danger btn-lg">HOME ABROADとは</button>
+        </a>
+			</div>
+		</div>
+		<div class="carousel-item ">
+        <img src="http://glacial-fortress-30715.herokuapp.com/img/kitchen-1336160_1920.jpg" alt="">
+        <div class="carousel-caption">
+            <h1>グローバル時代の新しい留学</h1>
+            <h2>HOME ABROAD</h2>
+    <a href="#project">
+            <button type="button" class="btn btn-outline-light btn-lg">さっそく留学先を探す</button>
+    </a>
+<a href="https://hikopro.com/homeabroad/">
+            <button type="button" class="btn btn-outline-danger btn-lg">HOME ABROADとは</button>
+    </a>
+        </div>
+        </div>
+        <div class="carousel-item ">
+                <img src="http://glacial-fortress-30715.herokuapp.com/img/living-room-581073_1920.jpg" alt="">
+                <div class="carousel-caption">
+                    <h1>グローバル時代の新しい留学</h1>
+                    <h2>HOME ABROAD</h2>
+            <a href="#project">
+                    <button type="button" class="btn btn-outline-light btn-lg">さっそく留学先を探す</button>
+            </a>
+        <a href="https://hikopro.com/homeabroad/">
+                    <button type="button" class="btn btn-outline-danger btn-lg">HOME ABROADとは</button>
+            </a>
+                </div>
+        </div>
+        <div class="carousel-item ">
+                <img src="http://glacial-fortress-30715.herokuapp.com/img/neonbrand-381344-unsplash.jpg" alt="">
+                <div class="carousel-caption">
+                    <h1>グローバル時代の新しい留学</h1>
+                    <h2>HOME ABROAD</h2>
+            <a href="#project">
+                    <button type="button" class="btn btn-outline-light btn-lg">さっそく留学先を探す</button>
+            </a>
+        <a href="https://hikopro.com/homeabroad/">
+                    <button type="button" class="btn btn-outline-danger btn-lg">HOME ABROADとは</button>
+            </a>
+                </div>
+        </div>
+        <div class="carousel-item ">
+                <img src="http://glacial-fortress-30715.herokuapp.com/img/ceiling-clean-contemporary-1457842.jpg" alt="">
+                <div class="carousel-caption">
+                    <h1>グローバル時代の新しい留学</h1>
+                    <h2>HOME ABROAD</h2>
+            <a href="#project">
+                    <button type="button" class="btn btn-outline-light btn-lg">さっそく留学先を探す</button>
+            </a>
+        <a href="https://hikopro.com/homeabroad/">
+                    <button type="button" class="btn btn-outline-danger btn-lg">HOME ABROADとは</button>
+            </a>
+                </div>
+        </div>
+	</div>
+</div>
+
+
+<div class="posts">
+    <div class="container">
+        
+        
+            <div class="select mt-5">
+                <small>絞込み検索</small>
+            <form class="form-inline myform mt-2" action="/search" method="GET" role="search">
+                <input type="hidden" name="_token" value="KsB5AdrHutwnyNKHqRqfovHaVrotPZtrkz3ZoOng">
+                
+                <label data-toggle="tooltip" data-placement="top" title="select price" class="sr-only mr-sm-2"
+                       for="inlineFormCustomSelect">Price</label>
+                <select name="price" data-toggle="tooltip" data-placement="top" title="select price"
+                        class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                        <option value="">Select Price</option>
+                                            <option value="1">100~300</option>
+                                            <option value="2">300~600</option>
+                                            <option value="3">600~900</option>
+                                            <option value="4">900~1200</option>
+                                            <option value="5">1200~1500</option>
+                                            <option value="6">1500~</option>
+                                    </select>
+                
+            
+                <label data-toggle="tooltip" data-placement="top" title="select area" class="sr-only mr-sm-2"
+                       for="inlineFormCustomSelect">Area</label>
+                <select name="area" data-toggle="tooltip" data-placement="top" title="select area"
+                        class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                        <option value="">Select Area</option>
+                                            <option value="2">Bangalore</option>
+                                            <option value="3">Mumbai</option>
+                                            <option value="4">Delhi</option>
+                                            <option value="5">Kolkata</option>
+                                            <option value="6">Varanasi</option>
+                                            <option value="7">Chennai</option>
+                                    </select>
+            
+                <label data-toggle="tooltip" data-placement="top" title="select Study" class="sr-only mr-sm-2"
+                       for="inlineFormCustomSelect">Study</label>
+                <select name="study" data-toggle="tooltip" data-placement="top" title="select study"
+                        class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                        <option value="">Select Study</option>
+                                            <option value="1">IT</option>
+                                            <option value="2">Yoga</option>
+                                            <option value="3">Cook</option>
+                                            <option value="4">Business</option>
+                                            <option value="5">Dance</option>
+                                            <option value="6">English</option>
+                                    </select>
+            
+                <button type="submit" class="btn btn-primary btn-md">Search</button>
+            </form>
+        </div>
+        <h1>ホームステイ留学先一覧</h1>
+        <div class="row justify-content-center welcomepost">
+                            
+            
+                       
+            <div class="col-sm-3 card post" id="project">
+            <a href="http://glacial-fortress-30715.herokuapp.com/post/single/9"></a>
+                    <div class="post-img-top">
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/myprefix/NK5b0WwOGUyKhZ2KxWAMqMQby0m1a9uywBWzoqfS.jpeg" alt="" class="study-image">
+                       
+                    </div>
+                        <div class="detail">
+                          
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/avatar/QmCTDPjrQboIhYenbg9Q6lv9UqS3kimGURIpnrhV.png" alt="" class="icon-image" width="50px" height="50px">
+                            <h3>rudora</h3>
+                            <div class="post-tag pl-2">
+                                <span class="area">Kolkata</span>
+                                <span class="price">＄450</span>
+                                <span class="study">Cook</span>
+                        </div>
+                          
+                        <h2>本場のインドカレーの原点を知る3週間</h2>
+                        <p>100種類以上に及ぶインドのスパイスを学び、オリジナルなインドカレーを作れるようにサポートします。</p>
+                        </div>
+                    </div>
+                   
+                       
+            <div class="col-sm-3 card post" id="project">
+            <a href="http://glacial-fortress-30715.herokuapp.com/post/single/10"></a>
+                    <div class="post-img-top">
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/myprefix/KAiFy13fJTM2Sy8IiJ19eh5KBPFQBBudKOZ1kFgo.jpeg" alt="" class="study-image">
+                       
+                    </div>
+                        <div class="detail">
+                          
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/avatar/thjXtGIIKXxlZQ43dHfSyEb7e3FcPRcJISB7Hwmo.png" alt="" class="icon-image" width="50px" height="50px">
+                            <h3>Kabir</h3>
+                            <div class="post-tag pl-2">
+                                <span class="area">Chennai</span>
+                                <span class="price">＄1000</span>
+                                <span class="study">Yoga</span>
+                        </div>
+                          
+                        <h2>ヨガ初心者からRYT500を取得する2ヶ月</h2>
+                        <p>インドのヨガの聖地にて、朝から夕方までヨガのレッスンを受けて頂き、2ヶ月間でRYT500の資格を取得できます。</p>
+                        </div>
+                    </div>
+                   
+                       
+            <div class="col-sm-3 card post" id="project">
+            <a href="http://glacial-fortress-30715.herokuapp.com/post/single/11"></a>
+                    <div class="post-img-top">
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/myprefix/iKQZ5CxOtkPLyVFJtBYdDHEAvu3l9N4vpGUA0VHP.jpeg" alt="" class="study-image">
+                       
+                    </div>
+                        <div class="detail">
+                          
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/avatar/jWP7CK0W3dycIVQEyd4jpDL4KC01IcGDcTIvCPjU.png" alt="" class="icon-image" width="50px" height="50px">
+                            <h3>Krishna</h3>
+                            <div class="post-tag pl-2">
+                                <span class="area">Bangalore</span>
+                                <span class="price">＄780</span>
+                                <span class="study">IT</span>
+                        </div>
+                          
+                        <h2>インドのIT都市で最先端のIT技術を学ぶ</h2>
+                        <p>インドのダイナミックなIT都市バンガロールで、アプリ開発やAIの開発技術を現役エンジニアと共に学びます。</p>
+                        </div>
+                    </div>
+                   
+                       
+            <div class="col-sm-3 card post" id="project">
+            <a href="http://glacial-fortress-30715.herokuapp.com/post/single/12"></a>
+                    <div class="post-img-top">
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/myprefix/bm9J053lP25PwYLB179cogNVCMe9nxbuvzMmyKsP.jpeg" alt="" class="study-image">
+                       
+                    </div>
+                        <div class="detail">
+                          
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/avatar/sj7Zc9e10YR58TbboIVHGP9cEWADjpBIzi1OwLdZ.png" alt="" class="icon-image" width="50px" height="50px">
+                            <h3>Madhavaditya</h3>
+                            <div class="post-tag pl-2">
+                                <span class="area">Varanasi</span>
+                                <span class="price">＄200</span>
+                                <span class="study">Yoga</span>
+                        </div>
+                          
+                        <h2>修行僧サドゥーと共に未知の体験2週間</h2>
+                        <p>ヒンドゥー教の聖地バラナシにて、修行僧のサドゥーと共に未知なる体験をする2週間のプログラムです。自分探しにおすすめ！</p>
+                        </div>
+                    </div>
+                   
+                       
+            <div class="col-sm-3 card post" id="project">
+            <a href="http://glacial-fortress-30715.herokuapp.com/post/single/14"></a>
+                    <div class="post-img-top">
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/myprefix/mCq3cUIweST51c5SDmZZlt2XF5j5EnjIWvYhQ8ik.png" alt="" class="study-image">
+                       
+                    </div>
+                        <div class="detail">
+                          
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/avatar/d7wNySSqfqlIjZq97rF0Dk98FHVPKiugiSXB3iGB.png" alt="" class="icon-image" width="50px" height="50px">
+                            <h3>バッチャン</h3>
+                            <div class="post-tag pl-2">
+                                <span class="area">Bangalore</span>
+                                <span class="price">＄425</span>
+                                <span class="study">IT</span>
+                        </div>
+                          
+                        <h2>大学生がブロガーになる1週間</h2>
+                        <p>僕と一緒にブログ立ち上げてみませんか？</p>
+                        </div>
+                    </div>
+                   
+                       
+            <div class="col-sm-3 card post" id="project">
+            <a href="http://glacial-fortress-30715.herokuapp.com/post/single/13"></a>
+                    <div class="post-img-top">
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/image/wgwZGyVIzYpaTAkuBDuI9z0cwTD49V0VOMxTYZ0B.jpeg" alt="" class="study-image">
+                       
+                    </div>
+                        <div class="detail">
+                          
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/avatar/qH6cioSXtHw0epgRlnzHoYdX05d9x89NvBVWPgwg.png" alt="" class="icon-image" width="50px" height="50px">
+                            <h3>Gandhi</h3>
+                            <div class="post-tag pl-2">
+                                <span class="area">Delhi</span>
+                                <span class="price">＄1200</span>
+                                <span class="study">Dance</span>
+                        </div>
+                          
+                        <h2>元ボリウッドスターに演劇を教わる3ヶ月</h2>
+                        <p>インドの有名ボリウッド映画に出演経験のある俳優の下、演劇の基礎やボリウッドダンスを学びます。</p>
+                        </div>
+                    </div>
+                   
+                       
+            <div class="col-sm-3 card post" id="project">
+            <a href="http://glacial-fortress-30715.herokuapp.com/post/single/16"></a>
+                    <div class="post-img-top">
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/myprefix/XSHEKPSgPdjeQojcoyevNVJsvvykOcGxdskCedCG.jpeg" alt="" class="study-image">
+                       
+                    </div>
+                        <div class="detail">
+                          
+                        <img src="" alt="" class="icon-image" width="50px" height="50px">
+                            <h3>ss</h3>
+                            <div class="post-tag pl-2">
+                                <span class="area">Bangalore</span>
+                                <span class="price">＄aaaa</span>
+                                <span class="study">IT</span>
+                        </div>
+                          
+                        <h2>aaaa</h2>
+                        <p>aaaaa</p>
+                        </div>
+                    </div>
+                   
+                       
+            <div class="col-sm-3 card post" id="project">
+            <a href="http://glacial-fortress-30715.herokuapp.com/post/single/15"></a>
+                    <div class="post-img-top">
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/image/DyvsNsmPP0BvjoIdTSm3l15pnrfDzBX6z9qFvRbG.png" alt="" class="study-image">
+                       
+                    </div>
+                        <div class="detail">
+                          
+                        <img src="" alt="" class="icon-image" width="50px" height="50px">
+                            <h3>a</h3>
+                            <div class="post-tag pl-2">
+                                <span class="area">Bangalore</span>
+                                <span class="price">＄89</span>
+                                <span class="study">IT</span>
+                        </div>
+                          
+                        <h2>ギター留学</h2>
+                        <p>ギター練習</p>
+                        </div>
+                    </div>
+                   
+                       
+            <div class="col-sm-3 card post" id="project">
+            <a href="http://glacial-fortress-30715.herokuapp.com/post/single/6"></a>
+                    <div class="post-img-top">
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/image/jsxmYlgb32Qp8dGarTUeHbuVGHzItz2wjjyoLpfE.jpeg" alt="" class="study-image">
+                       
+                    </div>
+                        <div class="detail">
+                          
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/avatar/tVAkcCmgSQ1Yk8fcscbYhnsx75kH8KQOuzHPz7x2.jpeg" alt="" class="icon-image" width="50px" height="50px">
+                            <h3>Shinichi Hikosaka</h3>
+                            <div class="post-tag pl-2">
+                                <span class="area">Bangalore</span>
+                                <span class="price">＄700</span>
+                                <span class="study">IT</span>
+                        </div>
+                          
+                        <h2>インドの圧倒的ビジネスを学ぶ2週間</h2>
+                        <p>インドの金融都市ムンバイで、今急成長のスタートアップ企業の経営者の元で学習できます。</p>
+                        </div>
+                    </div>
+                   
+                       
+            <div class="col-sm-3 card post" id="project">
+            <a href="http://glacial-fortress-30715.herokuapp.com/post/single/17"></a>
+                    <div class="post-img-top">
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/myprefix/OrcCdlfYeLq5KUdhp92Tqehu0rt942PuKES2mJnH.jpeg" alt="" class="study-image">
+                       
+                    </div>
+                        <div class="detail">
+                          
+                        <img src="" alt="" class="icon-image" width="50px" height="50px">
+                            <h3>っっっっs</h3>
+                            <div class="post-tag pl-2">
+                                <span class="area">Bangalore</span>
+                                <span class="price">＄100</span>
+                                <span class="study">IT</span>
+                        </div>
+                          
+                        <h2>miermvir</h2>
+                        <p>kjフォrbjvみおwr</p>
+                        </div>
+                    </div>
+                   
+                       
+            <div class="col-sm-3 card post" id="project">
+            <a href="http://glacial-fortress-30715.herokuapp.com/post/single/18"></a>
+                    <div class="post-img-top">
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/myprefix/WPWoEsuNUiQkn6qoetwSCw2Xl1ycVd3xTwAT1yYQ.png" alt="" class="study-image">
+                       
+                    </div>
+                        <div class="detail">
+                          
+                        <img src="" alt="" class="icon-image" width="50px" height="50px">
+                            <h3>kevin</h3>
+                            <div class="post-tag pl-2">
+                                <span class="area">Bangalore</span>
+                                <span class="price">＄$200</span>
+                                <span class="study">IT</span>
+                        </div>
+                          
+                        <h2>草原でたたずむ</h2>
+                        <p>草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう草原でたたずみましょう</p>
+                        </div>
+                    </div>
+                   
+                       
+            <div class="col-sm-3 card post" id="project">
+            <a href="http://glacial-fortress-30715.herokuapp.com/post/single/19"></a>
+                    <div class="post-img-top">
+                        <img src="https://homeabroad.s3.ap-northeast-1.amazonaws.com/myprefix/AIe8dbQs9akKMPoccHvF49boOUghJrrb72b8pPk0.png" alt="" class="study-image">
+                       
+                    </div>
+                        <div class="detail">
+                          
+                        <img src="" alt="" class="icon-image" width="50px" height="50px">
+                            <h3>test</h3>
+                            <div class="post-tag pl-2">
+                                <span class="area">Bangalore</span>
+                                <span class="price">＄$200</span>
+                                <span class="study">Yoga</span>
+                        </div>
+                          
+                        <h2>testtest</h2>
+                        <p>testtesttesttesttest</p>
+                        </div>
+                    </div>
+                   
+                                    
+        </div>
+    </div>
+</div>
+</div>
+
+    
+</body>
+</html>

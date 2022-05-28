@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\DestController;
 
 // LP
 Route::get('/paiabroad', function () {
@@ -11,8 +13,17 @@ Route::get('/paiabroad', function () {
 // root
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// search
+Route::get('/search', [HomeController::class, 'search'])->name('home.search');
+
+// user
+Route::get('/users/{user}/profile', [UserController::class, 'showProfile'])->name('users.profile');
+
+// dest
+Route::resource('users.dests', DestController::class);
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

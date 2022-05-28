@@ -128,3 +128,26 @@ table td {
     height: 550px;
   }
 }
+
+/* root page header slide images */
+.swiper-slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+}
+#header_slide_image1 {
+  background-image: url("../../public/images/header-slide-image1.jpg");
+}
+#header_slide_image2 {
+  background-image: url("../../public/images/header-slide-image2.jpg");
+}
+#header_slide_image3 {
+  background-image: url("../../public/images/header-slide-image3.jpg");
+}
+#header_slide_image4 {
+  background-image: url("../../public/images/header-slide-image4.jpg");
+}
+#header_slide_image5 {
+  background-image: url("../../public/images/header-slide-image5.jpg");
+}

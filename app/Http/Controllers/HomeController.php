@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function index(){
         $areas = Area::all()->pluck('name');
         $studies = Study::all()->pluck('name');
-        $dests = Dest::latest()->get();
+        $dests = Dest::orderBy('id', 'desc')->paginate(20);
 
         return view('home.index', compact('areas', 'studies', 'dests'));
     }
@@ -57,7 +57,7 @@ class HomeController extends Controller
             $query->where('study_id', $request->study);
         }
 
-        $dests = $query->get();
+        $dests = $query->paginate(20);
 
         return view('home.search', compact('dests', 'areas', 'studies'));
     }

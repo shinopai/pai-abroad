@@ -151,3 +151,8 @@ table td {
 #header_slide_image5 {
   background-image: url("../../public/images/header-slide-image5.jpg");
 }
+
+/* sp menu */
+.menu_sp.active {
+  opacity: 1;
+}

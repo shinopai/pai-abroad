@@ -3,12 +3,12 @@
   <header>
     <div class="swiper">
       <div class="absolute w-[90%] right-0 left-0 mx-auto flex justify-between items-center z-10">
-        <div class="w-[15%]">
+        <div class="w-[30%] tab:w-[15%]">
           <a href="{{ url('/') }}">
-            <x-application-logo class="w-full h-auto object-cover" />
+            <x-application-logo />
           </a>
         </div>
-        <div class="flex flex-grow justify-end gap-4">
+        <div class="hidden pc:block flex flex-grow justify-end gap-4">
           <a href="{{ url('/paiabroad') }}" class="inline-block mr-5">PAI ABROADとは</a>
           @guest
           <a href="{{ route('register') }}" class="inline-block mr-5">新規登録</a>
@@ -21,10 +21,13 @@
           <a href="{{ route('logout') }}" id="logout_btn" class="inline-block" onclick="event.preventDefault(); logout();">ログアウト</a>
           @endguest
         </div>
+        <div class="pc:hidden">
+          <img src="{{ asset('images/menu-icon.png') }}" alt="menu-icon" srcset="" style="width: 24px; height: 24px;">
+        </div>
       </div>
-      <div class="absolute right-0 left-0 mx-auto z-10 bottom-[15%] text-white text-center">
+      <div class="absolute right-0 left-0 mx-auto z-10 bottom-[30%] tab:bottom-[15%] text-white text-center">
         <p class="text-4xl tab:text-5xl mb-8">
-          グローバル時代の新しい留学
+          グローバル時代の<br class="tab:hidden">新しい留学
         </p>
         <h1 class="text-5xl tab:text-6xl font-bold mb-8">PAI<br>ABROAD</h1>
         <a href="" class="bg-transparent border-2 border-white rounded-md py-1 px-2 inline-block mr-2">さっそく留学先を探す</a>
@@ -43,15 +46,20 @@
     </div>
   </header>
 
+  <!-- flash message -->
+  @if (session('flash'))
+  <p class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3 text-center">{{ session('flash') }}</p>
+  @endif
+
   <!-- main -->
-  <div class="w-[80%] mx-auto max-w-[1200px]">
+  <div class="w-[90%] pc:w-[80%] mx-auto max-w-[1200px]">
     <div class="container mx-auto flex justify-center items-center p-2 md:p-0">
-      <div class="border w-[50%] mt-5 border-gray-300 p-6 grid grid-cols-1 gap-6 bg-white shadow-lg rounded-lg">
+      <div class="border w-full pc:w-[50%] mt-5 border-gray-300 p-6 grid grid-cols-1 gap-6 bg-white shadow-lg rounded-lg">
         <p class="text-center">絞り込み検索</p>
         <form action="{{ route('home.search') }}" method="GET">
-          <div class="flex justify-between gap-2">
-            <div class="w-[30%]">
-              <select name="price" class="w-full border p-2 rounded">
+          <div class="block pc:flex justify-between gap-2">
+            <div class="w-full pc:w-[30%]">
+              <select name="price" class="w-full border p-2 rounded mb-2 pc:mb-0">
                 <option value="">Price</option>
                 <option value="1">~299</option>
                 <option value="2">300~599</option>
@@ -62,15 +70,15 @@
                 <option value="7">1800~</option>
               </select>
             </div>
-            <div class="w-[30%]">
-              <select name="area" class="w-full border p-2 rounded">
+            <div class="w-full pc:w-[30%]">
+              <select name="area" class="w-full border p-2 rounded mb-2 pc:mb-0">
                 <option value="">Area</option>
                 @foreach($areas as $index => $area)
                 <option value="{{ $index + 1 }}">{{ $area }}</option>
                 @endforeach
               </select>
             </div>
-            <div class="w-[30%]">
+            <div class="w-full pc:w-[30%]">
               <select name="study" class="w-full border p-2 rounded">
                 <option value="">Study</option> @foreach($studies as $index => $study)
                 <option value="{{ $index + 1 }}">{{ $study }}</option>
@@ -86,10 +94,10 @@
     <!-- study abroad destination list -->
     <section class="mt-10">
       <h1 class="text-2xl tab:text-3xl font-bold">
-        検索結果:&nbsp;{{ $dests->count() }}件
+        検索結果(全{{ $dests->total() }}件)
       </h1>
 
-      <div class="w-full p-8">
+      <div class="w-full p-4 pc:p-8">
         <div class="grid justify-center tab:grid-cols-2 pc:grid-cols-3 gap-5 lg:gap-7">
           <!-- Card 1 -->
           @forelse($dests as $dest)
@@ -98,7 +106,7 @@
               @if (Storage::disk('local')->exists('public/dests/' .$dest->user->id.'/'.$dest->image))
               <img class="h-56 w-full object-cover" src="{{ asset('storage/dests/'.$dest->user->id.'/'.$dest->image) }}" alt="{{ $dest->title }}" />
               @else
-              <img class="h-56 w-full object-cover" src="{{ asset('images/user-image.jpg') }}" alt="{{ $dest->title }}" />
+              <img class="h-56 w-full object-cover" src="{{ asset('images/study-abroad.png') }}" alt="{{ $dest->title }}" />
               @endif
               <div class="p-3">
                 <div class="flex items-center gap-2 mb-2">
@@ -128,6 +136,7 @@
           @endforelse
         </div>
       </div>
+      {{ $dests->appends(request()->input())->links() }}
     </section>
   </div>
 

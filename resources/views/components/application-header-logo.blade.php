@@ -3,4 +3,5 @@
   alt="header-logo"
   srcset=""
   class="w-full h-auto object-cover"
+  style="max-width: 170px;"
 />

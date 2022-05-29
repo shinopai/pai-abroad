@@ -32,4 +32,15 @@ $(function () {
     );
     return false;
   });
+
+  // sp menu
+  $(".hamburger").click(function () {
+    $(".menu_sp").removeClass("hidden");
+    $(".menu_sp").addClass("active");
+  });
+
+  $(".close_btn").click(function () {
+    $(".menu_sp").addClass("hidden");
+    $(".menu_sp").removeClass("active");
+  });
 });

@@ -3,9 +3,13 @@
   @include('layouts.partial._header')
 
   <!-- main -->
-  <div class="flex justify-center mt-10 w-[80%] mx-auto">
+  <div class="flex justify-center mt-10 w-[80%] mx-auto my-5">
     <div class="w-full rounded-lg shadow-lg bg-white">
-      <img class="rounded-t-lg w-full h-auto object-cover" src="{{ asset('storage/dests/'.$dest->user->id.'/'.$dest->image) }}" alt="{{ $dest->user->name }}" />
+      @if (Storage::disk('local')->exists('public/dests/' .$dest->user->id.'/'.$dest->image))
+      <img class="rounded-t-lg w-full h-auto object-cover" src="{{ asset('storage/dests/'.$dest->user->id.'/'.$dest->image) }}" alt="{{ $dest->title }}" />
+      @else
+      <img class="rounded-t-lg w-full h-auto object-cover" src="{{ asset('images/study-abroad.png') }}" alt="{{ $dest->title }}" />
+      @endif
       <div class="p-6">
         <h5 class="text-gray-900 text-xl font-medium mb-2">{{ $dest->title }}</h5>
         <p class="text-gray-700 text-base mb-4">
@@ -15,7 +19,7 @@
           <h5 class="text-gray-900 text-xl font-medium mb-2">ホームステイ留学の詳細</h5>
           <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-              <div class="overflow-hidden">
+              <div>
                 <table class="min-w-full">
                   <tbody>
                     <tr class="border-b">

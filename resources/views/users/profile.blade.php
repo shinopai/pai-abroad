@@ -25,7 +25,11 @@
               </tr>
               <tr>
                 <td class="px-2 py-2 text-gray-500 font-semibold">登録留学先</td>
-                <td class="px-2 py-2">{{ $user->dests->count() }}</td>
+                <td class="px-2 py-2"><a href="{{ route('users.dests', ['user' => $user->id]) }}" class="hover:underline hover:text-blue-500">{{ $user->dests->count() }}</a></td>
+              </tr>
+              <tr>
+                <td class="px-2 py-2 text-gray-500 font-semibold">チャットルーム</td>
+                <td class="px-2 py-2"><a href="{{ route('users.rooms', ['user' => $user->id]) }}" class="hover:underline hover:text-blue-500">{{ $user->rooms->count() }}</a></td>
               </tr>
             </tbody>
           </table>

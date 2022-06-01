@@ -4,7 +4,7 @@
       <x-application-header-logo class="w-full h-auto object-cover" />
     </a>
   </div>
-  <ul class="hidden pc:block flex justify-end pr-6">
+  <ul class="hidden pc:flex justify-end pr-6">
     <li><a href="{{ url('/paiabroad') }}" class="inline-block mr-5">PAI ABROADとは</a></li>
     @auth
     <li><a href="{{ route('users.profile', ['user' => Auth::id()]) }}" class="inline-block mr-5">{{ Auth::user()->name }}さん</a></li>

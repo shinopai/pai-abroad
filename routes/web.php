@@ -19,11 +19,16 @@ Route::get('/search', [HomeController::class, 'search'])->name('home.search');
 // user
 Route::get('/users/{user}/profile', [UserController::class, 'showProfile'])->name('users.profile');
 
-// dest
-Route::resource('users.dests', DestController::class);
+Route::get('/users/{user}/dests', [UserController::class, 'showDests'])->name('users.dests');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+Route::get('/users/{user}/rooms', [UserController::class, 'showRooms'])->name('users.rooms');
+
+// dest
+Route::resource('users.dests', DestController::class, ['except' => 'index']);
+
+// routing for vue
+Route::get('/rooms/{any}', function(){
+    return view('vue-base');
+})->where('any', '.*');
 
 require __DIR__.'/auth.php';

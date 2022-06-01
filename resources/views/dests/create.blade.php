@@ -40,8 +40,8 @@
             </div>
 
             <!-- area and study-->
-            <div class="flex gap-2 mt-4">
-              <div class="w-[15%]">
+            <div class="pc:flex gap-2 mt-4">
+              <div class="w-full pc:w-[15%]">
               <x-label for="area_id" :value="__('Area')" />
               <select id="area_id" name="area_id" class="border p-2 rounded block w-full">
                 @foreach($areas as $index => $area)
@@ -49,7 +49,7 @@
                 @endforeach
               </select>
               </div>
-              <div class="w-[15%]">
+              <div class="w-full pc:w-[15%]">
               <x-label for="study_id" :value="__('Study')" />
               <select id="study_id" name="study_id" class="border p-2 rounded block w-full">
                   @foreach($studies as $index => $study)

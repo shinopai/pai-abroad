@@ -49,4 +49,21 @@ class User extends Authenticatable
     public function dests(){
         return $this->hasMany(Dest::class);
     }
+
+    public function rooms(){
+        return $this->hasMany(Room::class);
+    }
+
+    public function messages(){
+        return $this->hasMany(Message::class);
+    }
+
+    /**
+     * some functions
+     */
+    public static function getPartner($partner_id){
+        $res = User::find($partner_id);
+
+        return $res;
+    }
 }

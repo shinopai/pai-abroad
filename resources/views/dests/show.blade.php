@@ -59,9 +59,8 @@
         </div>
         @auth
         @if(Auth::id() != $dest->user->id)
-        <button type="button" class="mt-5 w-full inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
-          このホストとチャットする
-        </button>
+        <div id="chat_vue">
+        </div>
         @endif
         @else
         <a href="{{ route('login') }}" class="text-center mt-5 w-full inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
@@ -72,3 +71,7 @@
     </div>
   </div>
 </x-app-layout>
+<script>
+  var userId = @json(Auth::id());
+  var partnerId = @json($user->id);
+</script>

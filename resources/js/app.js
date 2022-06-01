@@ -11,3 +11,6 @@ require("./main");
 
 // google map script file
 require("./map");
+
+// vue entry file
+require("./vue");

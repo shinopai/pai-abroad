@@ -14,6 +14,6 @@ class DestTableSeeder extends Seeder
      */
     public function run()
     {
-        Dest::factory()->count(100)->create();
+        Dest::factory()->count(150)->create();
     }
 }

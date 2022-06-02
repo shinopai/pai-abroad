@@ -12,7 +12,7 @@
       <form action="{{ route('logout') }}" method="post" id="logout_form">
         @csrf
       </form>
-      <a href="{{ route('logout') }}" id="logout_btn" class="inline-block" onclick="event.preventDefault(); logout();">ログアウト</a>
+      <a href="" id="logout_btn" class="inline-block" onclick="event.preventDefault();">ログアウト</a>
     </li>
     @else
     <li><a href="{{ route('register') }}" class="inline-block mr-5">新規登録</a></li>

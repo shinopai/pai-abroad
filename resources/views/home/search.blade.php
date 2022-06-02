@@ -8,7 +8,7 @@
             <x-application-logo />
           </a>
         </div>
-        <div class="hidden pc:block flex flex-grow justify-end gap-4">
+        <div class="hidden pc:flex flex-grow justify-end gap-4">
           <a href="{{ url('/paiabroad') }}" class="inline-block mr-5">PAI ABROADとは</a>
           @guest
           <a href="{{ route('register') }}" class="inline-block mr-5">新規登録</a>
@@ -21,10 +21,33 @@
           <a href="{{ route('logout') }}" id="logout_btn" class="inline-block" onclick="event.preventDefault(); logout();">ログアウト</a>
           @endguest
         </div>
-        <div class="pc:hidden">
+        <!-- hamburger_menu -->
+        <div class="hamburger pc:hidden cursor-pointer text-center pc:hidden">
           <img src="{{ asset('images/menu-icon.png') }}" alt="menu-icon" srcset="" style="width: 24px; height: 24px;">
         </div>
       </div>
+      <nav class="menu_sp fixed z-20 top-0 left-0 text-white bg-slate-300 bg-opacity-70 text-center w-full h-screen pt-5 opacity-0 transition-opacity duration-[2500ms] hidden">
+        <ul class="w-[80%] mx-auto text-[18px] text-left">
+          <li>
+            <img src="{{ asset('images/close-icon.png') }}" alt="menu-icon" srcset="" class="ml-auto close_btn" style="width: 24px; height: 24px;">
+          </li>
+          <li><a href="{{ url('/paiabroad') }}" class="inline-block mr-5">PAI ABROADとは</a></li>
+          @guest
+          <li><a href="{{ route('register') }}" class="inline-block mr-5">新規登録</a></li>
+          <li><a href="{{ route('login') }}" class="inline-block">ログイン</a></li>
+          @else
+          <li><a href="{{ route('users.profile', ['user' => Auth::id()]) }}" class="inline-block mr-5">{{ Auth::user()->name }}さん</a></li>
+          <li>
+            <form action="{{ route('logout') }}" method="post" id="logout_form">
+              @csrf
+            </form>
+            <a href="{{ route('logout') }}" id="logout_btn" class="inline-block" onclick="event.preventDefault(); logout();">ログアウト</a>
+          </li>
+          @endguest
+        </ul>
+      </nav>
+
+
       <div class="absolute right-0 left-0 mx-auto z-10 bottom-[30%] tab:bottom-[15%] text-white text-center">
         <p class="text-4xl tab:text-5xl mb-8">
           グローバル時代の<br class="tab:hidden">新しい留学
@@ -103,14 +126,14 @@
           @forelse($dests as $dest)
           <a href="{{ route('users.dests.show', ['user' => $dest->user->id, 'dest' => $dest->id]) }}">
             <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden h-full">
-              @if (Storage::disk('local')->exists('public/dests/' .$dest->user->id.'/'.$dest->image))
+              @if (App\Models\Dest::isExistsDestImage('public/dests/' .$dest->user->id.'/'.$dest->image))
               <img class="h-56 w-full object-cover" src="{{ asset('storage/dests/'.$dest->user->id.'/'.$dest->image) }}" alt="{{ $dest->title }}" />
               @else
               <img class="h-56 w-full object-cover" src="{{ asset('images/study-abroad.png') }}" alt="{{ $dest->title }}" />
               @endif
               <div class="p-3">
                 <div class="flex items-center gap-2 mb-2">
-                  @if (Storage::disk('local')->exists('public/images/'.$dest->user->image))
+                  @if (App\Models\User::isExistsUserImage('public/images/'.$dest->user->image))
                   <img src="{{ asset('storage/images/'.$dest->user->image) }}" alt="{{ $dest->user->name }}" srcset="" class="w-full h-auto object-cover rounded-full w-[50px] h-[50px]">
                   @else
                   <img src="{{ asset('images/'.$dest->user->image) }}" alt="{{ $dest->user->name }}" srcset="" class="w-full h-auto object-cover rounded-full w-[50px] h-[50px]">

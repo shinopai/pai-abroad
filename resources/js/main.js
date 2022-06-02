@@ -43,4 +43,9 @@ $(function () {
     $(".menu_sp").addClass("hidden");
     $(".menu_sp").removeClass("active");
   });
+
+  // logout
+    $('#logout_btn').click(function(){
+      $('#logout_form').submit();
+    })
 });

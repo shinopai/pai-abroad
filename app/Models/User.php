@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
@@ -63,6 +64,12 @@ class User extends Authenticatable
      */
     public static function getPartner($partner_id){
         $res = User::find($partner_id);
+
+        return $res;
+    }
+
+    public static function isExistsUserImage($image){
+        $res = Storage::disk('local')->exists($image);
 
         return $res;
     }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Dest extends Model
 {
@@ -39,5 +40,14 @@ class Dest extends Model
     public function study()
     {
         return $this->belongsTo(Study::class);
+    }
+
+    /**
+     * some functions
+     */
+    public static function isExistsDestImage($image){
+        $res = Storage::disk('local')->exists($image);
+
+        return $res;
     }
 }
